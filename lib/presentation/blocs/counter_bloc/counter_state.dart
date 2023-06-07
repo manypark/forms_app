@@ -1,4 +1,4 @@
-part of 'counter_cubit.dart';
+part of 'counter_bloc.dart';
 
 class CounterState extends Equatable {
 
@@ -6,19 +6,19 @@ class CounterState extends Equatable {
   final int transactionCount;
 
   const CounterState({
-    this.counter = 0,
+    this.counter = 10, 
     this.transactionCount = 0
   });
 
-  copyWith({
+  CounterState copyWith({
     int? counter,
-    int? transactionCount,
+    int? transactionCount
   }) => CounterState(
     counter         : counter          ?? this.counter,
     transactionCount: transactionCount ?? this.transactionCount,
   );
   
   @override
-  List<Object?> get props => [ counter, transactionCount ];
-  
+  List<Object> get props => [ counter, transactionCount ];
+
 }

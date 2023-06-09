@@ -25,11 +25,11 @@ class RegisterState extends Equatable {
     String? email,
     Password? password,
   }) => RegisterState(
-    formStatus: formStatus ?? this.formStatus,
-    username  : username ?? this.username,
-    email     : email ?? this.email,
-    password  : password ?? this.password ,
-    isValid   : isValid ?? this.isValid 
+    formStatus: formStatus?? this.formStatus,
+    username  : username  ?? this.username,
+    email     : email     ?? this.email,
+    password  : password  ?? this.password ,
+    isValid   : isValid   ?? this.isValid 
   );
 
   @override

@@ -119,8 +119,10 @@ class _RegisterFormState extends State<_RegisterForm> {
               icon: const Icon(Icons.save),
               label: const Text('Crear usuario'),
               onPressed: () {
-                final valid = _formKey.currentState!.validate();
-                if (!valid) return;
+                // final valid = _formKey.currentState!.validate();
+                // if (!valid) return;
+
+                registerCubit.onSubmit();
               },
             ),
           ],

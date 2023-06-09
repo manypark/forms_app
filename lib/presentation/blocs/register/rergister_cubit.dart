@@ -16,11 +16,14 @@ class RergisterCubit extends Cubit<RegisterState> {
         formStatus: FormStatus.validating,
         username  : UserName.dirty( state.username.value ),
         password  : Password.dirty( state.username.value ),
+        email     : Email.dirty( state.email.value ),
         isValid   : Formz.validate([state.username, state.password]),
       )
     );
-    
-    print('Submit: $state');
+
+    print('name: ${state.username.value}');
+    print('email: ${state.email.value}');
+    print('pass: ${state.password.value}');
   }
 
   void username( String value ) {
@@ -30,15 +33,19 @@ class RergisterCubit extends Cubit<RegisterState> {
     emit(
       state.copyWith(
         username: userName,
-        isValid : Formz.validate([userName, state.password])
+        isValid : Formz.validate([userName, state.password, state.email])
       )
     );
   }
 
   void email( String value ) {
+
+    final email = Email.dirty(value);
+
     emit(
       state.copyWith(
-        email: value,
+        email   : email,
+        isValid : Formz.validate([ email, state.password, state.username])
       )
     );
   }
@@ -50,7 +57,7 @@ class RergisterCubit extends Cubit<RegisterState> {
     emit(
       state.copyWith(
         password: password,
-        isValid : Formz.validate([password, state.username])
+        isValid : Formz.validate([password, state.username, state.email])
       )
     );
   }

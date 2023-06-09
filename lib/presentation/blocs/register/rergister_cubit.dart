@@ -18,6 +18,7 @@ class RergisterCubit extends Cubit<RegisterState> {
       )
     );
   }
+
   void email( String value ) {
     emit(
       state.copyWith(
@@ -25,6 +26,7 @@ class RergisterCubit extends Cubit<RegisterState> {
       )
     );
   }
+
   void password( String value ) {
     emit(
       state.copyWith(
@@ -32,4 +34,5 @@ class RergisterCubit extends Cubit<RegisterState> {
       )
     );
   }
+  
 }

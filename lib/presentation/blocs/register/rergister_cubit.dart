@@ -20,10 +20,7 @@ class RergisterCubit extends Cubit<RegisterState> {
         isValid   : Formz.validate([state.username, state.password]),
       )
     );
-
-    print('name: ${state.username.value}');
-    print('email: ${state.email.value}');
-    print('pass: ${state.password.value}');
+    
   }
 
   void username( String value ) {

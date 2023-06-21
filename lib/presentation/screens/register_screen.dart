@@ -56,13 +56,11 @@ class _RegisterForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-
     final registerCubit = context.watch<RergisterCubit>();
 
     final userName = registerCubit.state.username;
     final password = registerCubit.state.password;
-    final email = registerCubit.state.email;
+    final email    = registerCubit.state.email;
 
     return Form(
         child: Column(
